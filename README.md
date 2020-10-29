@@ -6,7 +6,7 @@
 ### Implementation
 
 
-[Code Quiz Webpage Link](https://kaidong-chr.github.io/HW5_Work_Day_Scheduler/)
+[Work Day Scheduler Webpage Link](https://kaidong-chr.github.io/HW5_Work_Day_Scheduler/)
 
 ### Demonstration
 
