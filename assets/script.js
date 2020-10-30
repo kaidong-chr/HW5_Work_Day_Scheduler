@@ -42,7 +42,7 @@ $(document).ready(function() {
     renderPlans();
 
     // Save function so the data is stored
-    saveBtn.("click", function(){
+    saveBtn.on("click", function() {
         let rowHour = $(this).attr("data-hour");
         let input = $("#" + rowHour + "Row").val();
         localStorage.setItem(rowHour, input);
@@ -50,8 +50,7 @@ $(document).ready(function() {
     // Retrieve stored data from input
     function renderPlans() {
         for (let i = 0; i <= 12; i++) {
-            $("#" + rowHour + "Row").val(localStorage.getItem(i));
-            
+            $("#" + i + "Row").val(localStorage.getItem(i));
         }
     }
 
