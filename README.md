@@ -14,7 +14,7 @@ Create a workday scheduler that will let you enter and save inputs, color code p
 ### Demonstration
 
 ![Image](./assets/image/HW5_Work_Day_Scheduler.gif "Work Day Scheduler Demostration")
-![Image](https://img.shields.io/badge/Languages-html%20%7C%20css%20%7C%20jQuery-yellow)
+![Image](https://img.shields.io/badge/Languages-html%20%7C%20css%20%7C%20javascript-yellow)
 
 ### Installation
 
