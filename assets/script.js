@@ -16,8 +16,9 @@ $("#3Row").attr("timeRow", moment("3:00pm", "h:mm a").format("HH"));
 $("#4Row").attr("timeRow", moment("4:00pm", "h:mm a").format("HH"));
 $("#5Row").attr("timeRow", moment("5:00pm", "h:mm a").format("HH"));
 
-// Change the color of each row
 $(document).ready(function() {
+
+    // Change the color of each row
     for (let i = 0; i <= 12; i++) {
         // Hourly row variable
         let inputHour = $("#" + i + "Row").attr("timeRow");
@@ -26,16 +27,32 @@ $(document).ready(function() {
         // This will change the color for the past
         if (currentHourInt > inputHourInt) {
             $("#" + i + "Row").addClass("past");
+        }
         // This will change the color for the present
         if (currentHourInt === inputHourInt) {
             $("#" + i + "Row").addClass("present");
+        }
         // This will change the color for the future
         if (currentHourInt < inputHourInt) {
             $("#" + i + "Row").addClass("future");
         }
-        
     }
-}
 
-// Save function so the data is stored
-// Retrieve stored data
+    // Store input data
+    renderPlans();
+
+    // Save function so the data is stored
+    saveBtn.("click", function(){
+        let rowHour = $(this).attr("data-hour");
+        let input = $("#" + rowHour + "Row").val();
+        localStorage.setItem(rowHour, input);
+    });
+    // Retrieve stored data from input
+    function renderPlans() {
+        for (let i = 0; i <= 12; i++) {
+            $("#" + rowHour + "Row").val(localStorage.getItem(i));
+            
+        }
+    }
+
+});
