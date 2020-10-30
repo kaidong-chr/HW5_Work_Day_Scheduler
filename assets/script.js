@@ -1,5 +1,7 @@
 // Save button variable
 let saveBtn = $(".saveBtn");
+// Clear button variable
+let clearBtn = $(".clearBtn");
 // Current time variable using moment.js
 let currentHour = moment().format("HH");
 // Pass hour as an integer
@@ -17,6 +19,12 @@ $("#4Row").attr("timeRow", moment("4:00pm", "h:mm a").format("HH"));
 $("#5Row").attr("timeRow", moment("5:00pm", "h:mm a").format("HH"));
 
 $(document).ready(function() {
+
+    // Current date and time
+    $("#currentDay").append();
+    function addDate() {
+        $("#currentDay").html(moment().format('MMMM Do YYYY, h:mm a'));
+    } setInterval(addDate, 1000);
 
     // Change the color of each row
     for (let i = 0; i <= 12; i++) {
@@ -43,8 +51,11 @@ $(document).ready(function() {
 
     // Save function so the data is stored
     saveBtn.on("click", function() {
+        // Hourly row in HTML
         let rowHour = $(this).attr("data-hour");
+        // Saves input
         let input = $("#" + rowHour + "Row").val();
+        // Puts in local storage
         localStorage.setItem(rowHour, input);
     });
     // Retrieve stored data from input
@@ -53,5 +64,9 @@ $(document).ready(function() {
             $("#" + i + "Row").val(localStorage.getItem(i));
         }
     }
-
+    // Button to clear saved and reload
+    clearBtn.on("click", function(){
+        localStorage.clear();
+        location.reload();
+    })
 });
